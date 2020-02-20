@@ -1,0 +1,80 @@
+body{
+    margin: 0;
+    font-weight: lighter;
+    background-color: #496A84;
+    color: #FEFCFB;
+    text-align: center;
+}
+section{
+    min-height: 600px;
+    background-color: #323946;
+}
+button{ cursor: pointer; }
+input, button[type=submit]{
+    background-color: inherit;
+    color: #FEFCFB;
+    outline: none;
+}
+form input{
+    width: 400px;
+    padding: 6px 4px;
+    border:none;
+    border-bottom: 1px solid #FEFCFB;
+}
+form input:focus, form input:hover{
+    background-color: #5d83a1;
+}
+input::placeholder{ color: #FEFCFB; }
+button[type=submit]{ 
+    margin-top: 20px;
+    padding: 6px 40px;
+    border: 1px solid #FEFCFB;
+    transition: 0.2s;
+}
+button[type=submit]:hover{
+    background-color: #FEFCFB;
+    color: #496A84;
+}
+.wrapper{
+    width: 60%;
+    margin: 0 auto;
+}
+.section:first-child{ border-bottom: 1px solid #FEFCFB; }
+.section{
+    padding: 80px 20px;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.list-item{
+    position: relative;
+    width: 40%;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #C0D5BF;
+    color: #C0D5BF;
+    box-shadow: 4px 4px 4px #C0D5BF;
+}
+.list-item p{
+    margin: 0;
+}
+.list-item p span{ color: #666; }
+.list-item p.date{
+    margin-bottom: 4px;
+    color: #000;
+    font-size: 12px;
+}
+.list-item button{
+    position: absolute;
+    top: 0;
+    right: 1px;
+    font-size: 16px;
+    border: none;
+    background-color: inherit;
+    color: red;
+}
