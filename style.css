@@ -1,9 +1,16 @@
+*{box-sizing: border-box;}
 body{
+    position: relative;
     margin: 0;
     font-weight: lighter;
     background-color: #496A84;
     color: #FEFCFB;
     text-align: center;
+}
+ul, li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 section{
     min-height: 600px;
@@ -77,4 +84,34 @@ button[type=submit]:hover{
     border: none;
     background-color: inherit;
     color: red;
+}
+#menu{
+    position: fixed;
+    width: 40px;
+    top: 16px;
+    right: 16px;
+    background-color: inherit;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#menu div{
+    width: 30px;
+    height: 4px;
+    background-color: #000;
+    margin-bottom: 4px;
+}
+#menu #list{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+}
+#menu #list li{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 2px;
+    border: 1px solid #fff;
+}
+#menu:hover #list{
+    max-height: 500px;
+    transition: max-height 0s ease-in;
 }

@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="./style.css">
     <title>ToDo App</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="menu">
+        <div></div>
+        <div></div>
+        <div></div>
+        <ul id="list">
+            <li data-font="blue"></li>
+            <li data-font="green"></li>
+            <li data-font="red"></li>
+            <li data-font="yellow"></li>
+        </ul>
+    </div>
     <div class="section">
         <h1>Todo List</h1>
         <form id="todo-add">
@@ -21,6 +31,66 @@
         </div>
     </section>
 
+    <script>
+        const getLiBackgroundColor = (color) => {
+            switch(color){
+                // so what just happened is the first font I tried to like make work was with blue color but after 20 minutes
+                // i realized that my fheme is already blue
+                case 'blue':
+                    return '#496A84';
+                    break;
+                case 'green':
+                    return '#226854';
+                    break;
+                case 'red':
+                    return '#DD4E27';
+                    break;
+                case 'yellow':
+                    return '#E1DE68';
+                    break;
+                default:
+                    console.log('Ivalid font');
+                    break;
+            };
+        }
+
+        const changeThemeHelper = (brighterColor, darkerColor) => {
+            document.body.style.backgroundColor = brighterColor;
+            document.getElementsByTagName('section')[0].style.backgroundColor = darkerColor;
+        } 
+
+        const changeTheme = e => {
+            const theme = e.target.getAttribute('data-font');
+            switch(theme){
+                // so what just happened is the first font I tried to like make work was with blue color but after 20 minutes
+                // i realized that my fheme is already blue
+                case 'blue':
+                    changeThemeHelper('#496A84', '#323946');
+                    break;
+                case 'green':
+                    changeThemeHelper('#226854', '#102529');
+                    break;
+                case 'red':
+                    changeThemeHelper('#DD4E27', '#2D2725');
+                    break;
+                case 'yellow':
+                    changeThemeHelper('#E1DE68', '#AEB75E');
+                    break;
+                default:
+                    console.log('Ivalid font');
+                    break;
+            };
+        };
+        // i need to add events, but first I need to color them
+        // for some reason looping through _lis doesnt work so I need to create a new array... weird
+        const _lis = document.getElementsByTagName('li');
+        const lis = [];
+        for(let i = 0; i < _lis.length; i++){
+            lis.push(_lis[i]);
+        }
+        lis.forEach(li => li.style.backgroundColor = getLiBackgroundColor(li.getAttribute('data-font')));
+        lis.forEach(li => li.addEventListener('click', changeTheme));
+    </script>
     <script src="index.js"></script>
 </body>
 </html>
